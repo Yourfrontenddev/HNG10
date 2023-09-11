@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNG X Stage 1 Task</title>
+</head>
+<body>
+
+
+    <div class="container">
+    
+        <h1 data-testid="slackUserName"> ADEOYE TOMISIN</h1>
+        <div class="Image">
+        <img src="Slack Img.jpeg" alt="ADEOYE TOMISIN" data-testid="slackDisplayImage">
+        </div>
+        <h3 id="dayOfWeek" data-testid="currentDayOfTheWeek"></h3>
+        <h5 id="currentUTC"></h5>
+        <h5 data-testid="myTrack">Frontend Track</h5>
+        <button data-testid="gitHubLink"><a href="https://github.com/Yourfrontenddev/HNGx">Github link</a></button>
+        
+   </div>
+
+
+
+    
+    <script>
+         function getCurrentDayOfWeek() {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const currentDate = new Date();
+            const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
+            return dayOfWeek;
+        }
+
+        // Function to get the current UTC time with milliseconds accuracy
+        function getCurrentUTCWithMilliseconds() {
+            const currentDate = new Date();
+            const currentUTC = currentDate.toISOString();
+            return currentUTC;
+        }
+
+        // Display the current day of the week
+        const dayOfWeekElement = document.getElementById('dayOfWeek');
+        dayOfWeekElement.textContent = `Current day of the week: ${getCurrentDayOfWeek()}`;
+
+        // Display the current UTC time with milliseconds accuracy
+        const currentUTCElement = document.getElementById('currentUTC');
+        currentUTCElement.textContent = `Current UTC time with milliseconds: ${getCurrentUTCWithMilliseconds()}`;
+    </script>
+</body>
+</html>
